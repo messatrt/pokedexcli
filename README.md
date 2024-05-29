@@ -1,2 +1,2 @@
 # pokedexcli
-This is project to test my go knowledge
+This is a project to test my go knowledge
