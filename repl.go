@@ -10,11 +10,20 @@ import (
 func startRepl() {
 	reader := bufio.NewReader(os.Stdin)
 	for {
-		fmt.Print("pokedex>")
+		fmt.Print("pokedex> ")
 		command, _ := reader.ReadString('\n')
 		cleaned := cleanInput(command)
-		fmt.Printf(`enter %v
-`, cleaned)
+		if len(cleaned) == 0 {
+			continue
+		}
+		command = cleaned[0]
+		switch command {
+		case "exit":
+			os.Exit(0)
+
+		default:
+			fmt.Println("command not found")
+		}
 	}
 }
 
