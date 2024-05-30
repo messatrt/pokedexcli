@@ -1,5 +1,7 @@
 package main
 
 func main() {
-	startRepl()
+	pokiapiClient := pokiapi.newClient()
+
+	//startRepl()
 }
