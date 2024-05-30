@@ -1,4 +1,4 @@
-package main
+package pokiapi
 
 type LocationArea struct {
 	Count int `json:"count"`

@@ -1,4 +1,4 @@
-package main
+package pokiapi
 
 import (
 	"net/http"
@@ -11,7 +11,7 @@ type Client struct {
 	httpClient http.Client
 }
 
-func newClient() Client {
+func NewClient() Client {
 	return Client{
 		httpClient: http.Client{
 			Timeout: time.Minute,

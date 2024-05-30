@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func callBack_help() error {
+func callBack_help(cfg *config) error {
 	fmt.Println("Usage:")
 	allCommands := getCommands()
 	for _, command := range allCommands {

@@ -1,4 +1,4 @@
-package main
+package pokiapi
 
 import (
 	"encoding/json"
@@ -7,9 +7,12 @@ import (
 	"net/http"
 )
 
-func (c *Client) ListLocationArea() (LocationArea, error) {
+func (c *Client) ListLocationArea(pageUrl *string) (LocationArea, error) {
 	endpoint := "/location"
 	fullurls := baseUrl + endpoint
+	if pageUrl != nil {
+		fullurls = *pageUrl
+	}
 	locations := LocationArea{}
 	req, err := http.NewRequest("GET", fullurls, nil)
 	if err != nil {
